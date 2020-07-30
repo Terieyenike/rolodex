@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+
+body {
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-family: Montserrat, sans-serif;
+}
+
+section {
+  padding: 2em 0;
+}
+
+.header {
+  background: rgb(72, 177, 247);
+  padding: 2em 0;
+  text-align: center;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  border: 0;
+  outline: none;
+  font-size: 1.3rem;
+}
+
+.header h1 {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+}
+
+.input__container .input {
+  width: 85%;
+  text-indent: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 85%;
+}
+
+.card {
+  grid-auto-flow: dense;
+}
+
+.card_box {
+  background: rgba(72, 177, 247, 0.25);
+  display: flex;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.75em;
+}
+
+.card_box + .card_box {
+  margin-top: 1.3em;
+}
+
+.card_details {
+  font-family: Poppins, sans-serif;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.card_details h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card_details p {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.section_footer {
+  background: #202020;
+  color: white;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  width: 100%;
+}
+
+footer {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .input {
+    font-size: 2rem;
+  }
+
+  .card_details h2 {
+    font-size: 1.75rem;
+  }
+
+  .card_details p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .input__container .input {
+    width: 50%;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+}
