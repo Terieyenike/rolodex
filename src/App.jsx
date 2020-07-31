@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { SearchBox } from './components/SearchBox/SearchBox';
+import { CardList } from './components/CardList/CardList';
+import { Footer } from './components/Footer/Footer';
+import oval from './images/oval.svg';
+
+import style from './styles.module.css';
 
 const App = () => {
   const [monsters, setMonsters] = useState([]);
   const [searchField, setSearchField] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchMonsters();
@@ -11,60 +18,33 @@ const App = () => {
   const fetchMonsters = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await response.json();
-    console.log(data);
+    setMonsters(data);
+    setLoading(false);
   };
+
+  const searchMonsters = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  const filteredMonsters = monsters.filter((monster) =>
+    monster.name.toLowerCase().includes(searchField.toLowerCase())
+  );
   return (
-    <div>
-      <p>code</p>
-    </div>
+    <React.Fragment>
+      <div className={style.header}>
+        <h1>Monster Rolodex</h1>
+        <SearchBox value={searchField} handleChange={searchMonsters} />
+      </div>
+      {loading ? (
+        <div className={style.img}>
+          <img src={oval} alt='' />
+        </div>
+      ) : (
+        <CardList monsters={filteredMonsters} />
+      )}
+      <Footer />
+    </React.Fragment>
   );
 };
 
 export default App;
-
-// import React from 'react';
-// import { CardList } from './components/CardList/CardList.jsx';
-// import { SearchBox } from './components/SearchBox/SearchBox.jsx';
-// import './App.css';
-
-// class App extends React.Component {
-//   state = {
-//     monsters: [],
-//     searchField: '',
-//   };
-
-//   fetchUsers = (users) => {
-//     this.setState({ monsters: users });
-//   };
-
-//   searchMonsters = (e) => {
-//     this.setState({ searchField: e.target.value });
-//   };
-
-//   componentDidMount() {
-//     const url = 'https://jsonplaceholder.typicode.com/users';
-//     fetch(url)
-//       .then((res) => res.json())
-//       .then(this.fetchUsers);
-//   }
-
-//   render() {
-//     const { monsters, searchField } = this.state;
-//     const { searchMonsters } = this;
-//     const filteredMonsters = monsters.filter((monster) =>
-//       monster.name.toLowerCase().includes(searchField.toLowerCase())
-//     );
-//     return (
-//       <div className='App'>
-//         <h1>Monsters Rolodex</h1>
-//         <SearchBox
-//           placeholder='Search Monsters'
-//           handleChange={searchMonsters}
-//         />
-//         <CardList monsters={filteredMonsters} />
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
