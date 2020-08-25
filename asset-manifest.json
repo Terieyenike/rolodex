@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/rolodex/static/css/main.dfc406e1.chunk.css",
-    "main.js": "/rolodex/static/js/main.4fe3ea44.chunk.js",
-    "main.js.map": "/rolodex/static/js/main.4fe3ea44.chunk.js.map",
-    "runtime-main.js": "/rolodex/static/js/runtime-main.05ff32b7.js",
-    "runtime-main.js.map": "/rolodex/static/js/runtime-main.05ff32b7.js.map",
-    "static/js/2.bf376988.chunk.js": "/rolodex/static/js/2.bf376988.chunk.js",
-    "static/js/2.bf376988.chunk.js.map": "/rolodex/static/js/2.bf376988.chunk.js.map",
+    "main.css": "/rolodex/static/css/main.38915d37.chunk.css",
+    "main.js": "/rolodex/static/js/main.ee2ccf20.chunk.js",
+    "main.js.map": "/rolodex/static/js/main.ee2ccf20.chunk.js.map",
+    "runtime-main.js": "/rolodex/static/js/runtime-main.5e575def.js",
+    "runtime-main.js.map": "/rolodex/static/js/runtime-main.5e575def.js.map",
+    "static/js/2.a5504225.chunk.js": "/rolodex/static/js/2.a5504225.chunk.js",
+    "static/js/2.a5504225.chunk.js.map": "/rolodex/static/js/2.a5504225.chunk.js.map",
     "index.html": "/rolodex/index.html",
-    "precache-manifest.4160b9db998cb257e488eadd623d707d.js": "/rolodex/precache-manifest.4160b9db998cb257e488eadd623d707d.js",
+    "precache-manifest.68a28635d39cc17eec174a57bb1aafbd.js": "/rolodex/precache-manifest.68a28635d39cc17eec174a57bb1aafbd.js",
     "service-worker.js": "/rolodex/service-worker.js",
-    "static/css/main.dfc406e1.chunk.css.map": "/rolodex/static/css/main.dfc406e1.chunk.css.map",
-    "static/js/2.bf376988.chunk.js.LICENSE": "/rolodex/static/js/2.bf376988.chunk.js.LICENSE",
+    "static/css/main.38915d37.chunk.css.map": "/rolodex/static/css/main.38915d37.chunk.css.map",
+    "static/js/2.a5504225.chunk.js.LICENSE": "/rolodex/static/js/2.a5504225.chunk.js.LICENSE",
     "static/media/oval.svg": "/rolodex/static/media/oval.86cd5610.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.05ff32b7.js",
-    "static/js/2.bf376988.chunk.js",
-    "static/css/main.dfc406e1.chunk.css",
-    "static/js/main.4fe3ea44.chunk.js"
+    "static/js/runtime-main.5e575def.js",
+    "static/js/2.a5504225.chunk.js",
+    "static/css/main.38915d37.chunk.css",
+    "static/js/main.ee2ccf20.chunk.js"
   ]
 }
