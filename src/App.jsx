@@ -1,50 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+// bring in the asynchronous fetchMonsters action
+import { fetchMonsters, setSearchField } from './actions/robotsActions';
 import { SearchBox } from './components/SearchBox/SearchBox';
 import { CardList } from './components/CardList/CardList';
-import { Footer } from './components/Footer/Footer';
+// import { Footer } from './components/Footer/Footer';
 import oval from './images/oval.svg';
 
 import style from './styles.module.css';
 
-const App = () => {
-  const [monsters, setMonsters] = useState([]);
-  const [searchField, setSearchField] = useState('');
-  const [loading, setLoading] = useState(true);
-
+const App = ({ dispatch, loading, monsters, searchField }) => {
   useEffect(() => {
-    fetchMonsters();
-  }, []);
-
-  const fetchMonsters = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await response.json();
-    setMonsters(data);
-    setLoading(false);
-  };
+    dispatch(fetchMonsters());
+  }, [dispatch]);
 
   const searchMonsters = (e) => {
-    setSearchField(e.target.value);
+    dispatch(setSearchField(e.target.value));
+
   };
 
-  const filteredMonsters = monsters.filter((monster) =>
-    monster.name.toLowerCase().includes(searchField.toLowerCase())
-  );
+  const filterMonsters = monsters.filter((monster) => {
+    return monster.name.toLowerCase().includes(searchField.toLowerCase())
+  });
+
   return (
     <React.Fragment>
       <div className={style.header}>
         <h1>Monster Rolodex</h1>
-        <SearchBox value={searchField} handleChange={searchMonsters} />
+        <SearchBox
+          handleChange={searchMonsters}
+        />
       </div>
       {loading ? (
         <div className={style.img}>
           <img src={oval} alt='' />
         </div>
-      ) : (
-        <CardList monsters={filteredMonsters} />
+      )  : (
+        <CardList monsters={filterMonsters} />
       )}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  loading: state.monsters.loading,
+  monsters: state.monsters.monsters,
+  // hasErrors: state.monsters,
+  searchField: state.text.searchField,
+});
+
+export default connect(mapStateToProps)(App);
