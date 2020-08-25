@@ -17,26 +17,23 @@ const App = ({ dispatch, loading, monsters, searchField }) => {
 
   const searchMonsters = (e) => {
     dispatch(setSearchField(e.target.value));
-
   };
 
   const filterMonsters = monsters.filter((monster) => {
-    return monster.name.toLowerCase().includes(searchField.toLowerCase())
+    return monster.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
   return (
     <React.Fragment>
       <div className={style.header}>
         <h1>Monster Rolodex</h1>
-        <SearchBox
-          handleChange={searchMonsters}
-        />
+        <SearchBox handleChange={searchMonsters} />
       </div>
       {loading ? (
         <div className={style.img}>
           <img src={oval} alt='' />
         </div>
-      )  : (
+      ) : (
         <CardList monsters={filterMonsters} />
       )}
       {/* <Footer /> */}
