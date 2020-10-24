@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterButton correctly increment the counter 1`] = `ShallowWrapper {}`;
+
+exports[`CounterButton expect to render the Card component 1`] = `ShallowWrapper {}`;
+
+exports[`CounterButton renders without crashing 1`] = `ShallowWrapper {}`;

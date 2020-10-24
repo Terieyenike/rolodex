@@ -7,7 +7,13 @@ export const CardList = ({ monsters }) => (
     <div className={style.container}>
       <div className={style.card}>
         {monsters.map((monster) => (
-          <Card key={monster.id} monster={monster} />
+          <Card
+            key={monster.id}
+            name={monster.name}
+            email={monster.email}
+            company={monster.company.catchPhrase}
+            id={monster.id}
+          />
         ))}
       </div>
     </div>
