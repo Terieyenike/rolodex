@@ -31,7 +31,7 @@ const App = ({ dispatch, loading, monsters, searchField }) => {
       </div>
       {loading ? (
         <div className={style.img}>
-          <img src={oval} alt='' />
+          <img src={oval} alt='loading spinner' />
         </div>
       ) : (
         <CardList monsters={filterMonsters} />
