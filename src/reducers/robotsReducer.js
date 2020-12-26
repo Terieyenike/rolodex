@@ -1,22 +1,5 @@
 import * as actions from '../actions/robotsActions';
 
-export const initialStateSearch = {
-  searchField: '',
-};
-
-export const searchRobots = (state = initialStateSearch, action) => {
-  switch (action.type) {
-    case actions.CHANGE_SEARCH_FIELD:
-      return {
-        ...state,
-        searchField: action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
-
 export const initialState = {
   monsters: [],
   loading: false,

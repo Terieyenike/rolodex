@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../../styles.module.css';
-import CounterButton from '../CounterButton/CounterButton';
+// import CounterButton from '../CounterButton/CounterButton';
 
 export const SearchBox = ({ handleChange }) => (
   <div className={style.input__container}>
@@ -11,6 +11,5 @@ export const SearchBox = ({ handleChange }) => (
       placeholder={'Search Monsters'}
     />
     <br />
-    <CounterButton />
   </div>
 );

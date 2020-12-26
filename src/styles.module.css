@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Montserrat&display=swap');
 
 body {
   font-size: 1.3rem;
 }
 
 h1 {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Bigelow Rules', cursive;
 }
 
 section {
@@ -13,7 +13,7 @@ section {
 }
 
 .header {
-  background: rgb(72, 177, 247);
+  background: rgb(9, 46, 70);
   padding: 2em 0;
   text-align: center;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
@@ -86,6 +86,13 @@ section {
   align-items: center;
   min-height: 50vh;
   width: 100%;
+  flex-direction: column;
+  font-family: Montserrat, sans-serif;
+}
+
+div .img p:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 1.75rem;
 }
 
 .section_footer {
