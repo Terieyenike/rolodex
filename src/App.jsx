@@ -35,7 +35,7 @@ const App = ({ dispatch, loading, monsters, searchField, hasErrors }) => {
       return (
         <div className={style.img}>
           <p>Unable to display monsters</p>
-          <p>try connecting to the internet</p>
+          <p>try connecting to the internet.</p>
         </div>
       );
     }
